@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class JavaOnlineExam {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int score = 0;
+        System.out.println("---- Java Online Exam ----");
+        for (int i = 1; i <= 3; i++) {
+            if (i == 1) {
+                System.out.println("Q1. Which keyword is used to create an object in Java?");
+                System.out.println("1) new 2) create 3) object 4) class");
+                System.out.print("Enter your answer: ");
+                int ans = sc.nextInt();
+                if (ans == 1) score++;
+            } else if (i == 2) {
+                System.out.println("Q2. Which method is the entry point of a Java program?");
+                System.out.println("1) start() 2) main() 3) run() 4) execute()");
+                System.out.print("Enter your answer: ");
+                int ans = sc.nextInt();
+                if (ans == 2) score++;
+            } else if (i == 3) {
+                System.out.println("Q3. Which concept allows method overloading?");
+                System.out.println("1) Inheritance 2) Polymorphism 3) Abstraction 4) Encapsulation");
+                System.out.print("Enter your answer: ");
+                int ans = sc.nextInt();
+                if (ans == 2) score++;
+            }
+        }
+        System.out.println("---- Exam Completed ----");
+        System.out.println("Total Questions: 3");
+        System.out.println("Your Score: " + score);
+    }
+}
