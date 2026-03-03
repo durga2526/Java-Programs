@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class ClothingStore {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter T-Shirt price:");
+        int tshirt = sc.nextInt();
+
+        System.out.println("Enter Jeans price:");
+        int jeans = sc.nextInt();
+
+        System.out.println("Enter Jacket price:");
+        int jacket = sc.nextInt();
+
+        System.out.println("Enter number of items purchased:");
+        int count = sc.nextInt();
+
+        int total = tshirt + jeans + jacket;
+        double avg = total / 3.0;
+
+        int deliveryCharge = 40;
+        int finalAmount = total + deliveryCharge;
+
+        boolean freeDelivery = finalAmount > 1500;
+
+        int coupons = 1;
+        int updatedCoupons = ++coupons;
+
+        System.out.println("\nTotal:" + total);
+        System.out.println("Final Amount:" + finalAmount);
+        System.out.println("Avg Price:" + avg);
+        System.out.println("Free Delivery?:" + freeDelivery);
+        System.out.println("Coupons Earned:" + updatedCoupons);
+
+        sc.close();
+    }
+}
