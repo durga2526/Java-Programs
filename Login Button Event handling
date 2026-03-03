@@ -1,0 +1,25 @@
+import java.applet.Applet;
+import java.awt.*;
+import java.awt.event.*;
+
+/* <applet code="LoginButton" width=300 height=200></applet> */
+
+public class LoginButton extends Applet implements ActionListener {
+
+    Button login;
+    Label message;
+
+    public void init() {
+        login = new Button("Login");
+        message = new Label("");
+
+        add(login);
+        add(message);
+
+        login.addActionListener(this);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        message.setText("Login Successful!");
+    }
+}
