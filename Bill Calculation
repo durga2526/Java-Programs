@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class ElectricityBill {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter number of consumers: ");
+        int total=sc.nextInt();
+        int consumer=1;
+        while(consumer<=total) {
+            System.out.println("Enter units for consumer "+ consumer+":");
+            int units=sc.nextInt();
+            int bill=units*5;
+            System.out.println("Bill amount: $"+bill);
+            consumer++;
+        }
+    }
+}
