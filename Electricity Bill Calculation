@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+class Bill {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String consumerName;
+        int consumerNumber;
+        int units;
+        int billAmount=0;
+        int first100=0, next100=0, remaining=0;
+        System.out.println("Enter Consumer Name: ");
+        consumerName=sc.nextLine();
+        System.out.println("Enter Consumer Number: ");
+        consumerNumber=sc.nextInt();
+        System.out.println("Enter Units consumed: ");
+        units=sc.nextInt();
+        if(units<=100) {
+            first100 = units*2;
+        } else if(units<=200) {
+            first100 = 100*2;
+            next100 = (units-100)*3;
+        } else {
+            first100 = 100*2;
+            next100 = 100*3;
+            remaining = (units-200)*5;
+        }
+        billAmount=first100 + next100 + remaining;
+        System.out.println();
+        System.out.println("----ELECTRICITY BILL----");
+        System.out.println("Consumer Name : "+ consumerName);
+        System.out.println("Consumer Number : "+ consumerNumber);
+        System.out.println("Units Consumed : "+ units);
+        System.out.println();
+        System.out.println("----Charges Details----");
+        System.out.println("First 100 Units @ $2 = $"+ first100);
+        System.out.println("Next 100 Units @ $3 = $"+ next100);
+        System.out.println("Remaining Units @ $5 = $"+ remaining);
+        System.out.println();
+        System.out.println("Total Amount Payable $"+ billAmount);
+        System.out.println("Payment Due Date : 30-12-2025");
+        System.out.println("Thank You! - Pay On Time");
+        sc.close();
+    }
+}
