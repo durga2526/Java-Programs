@@ -1,0 +1,26 @@
+class Ticket extends Thread {
+
+    public void run() {
+        System.out.println(Thread.currentThread().getName() + " Booking Ticket...");
+        try {
+            Thread.sleep(1000);
+        } catch (Exception e) {
+        }
+        System.out.println(Thread.currentThread().getName() + " Ticket Booked Successfully.");
+    }
+}
+
+public class TicketBooking {
+
+    public static void main(String[] args) {
+
+        Ticket t1 = new Ticket();
+        Ticket t2 = new Ticket();
+
+        t1.setName("User 1");
+        t2.setName("User 2");
+
+        t1.start();
+        t2.start();
+    }
+}
