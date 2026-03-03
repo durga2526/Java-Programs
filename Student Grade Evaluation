@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+class GradeSystem {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String studentName;
+        int rollNo;
+        int[] marks = new int[5];
+        int total = 0;
+        char grade;
+        System.out.println("Enter Student Name: ");
+        studentName = sc.nextLine();
+        System.out.println("Enter Roll Number: ");
+        rollNo = sc.nextInt();
+        System.out.println("Enter marks for 5 subjects: ");
+        for(int i=0; i<5; i++) {
+            System.out.println("Subject " + (i+1) + ":");
+            marks[i]=sc.nextInt();
+            total=total + marks[i];
+        }
+        float percentage=total/5;
+        if(percentage>=90)
+            grade='A';
+        else if(percentage>=75)
+            grade='B';
+        else if(percentage>=65)
+            grade='C';
+        else
+            grade='F';
+        System.out.println();
+        System.out.println("----STUDENT MARK STATEMENT----");
+        System.out.println("Student Name : "+ studentName);
+        System.out.println("Roll Number : "+ rollNo);
+        System.out.println("Total Marks : "+ total);
+        System.out.println("Percentage : "+ percentage + "%");
+        System.out.println("Grade : "+ grade);
+        sc.close();
+    }
+}
