@@ -1,0 +1,51 @@
+package university;
+
+class Student {
+    String name;
+    int roll;
+    String department;
+
+    Student(String name, int roll, String department) {
+        this.name = name;
+        this.roll = roll;
+        this.department = department;
+    }
+
+    void displayStudent() {
+        System.out.println("Student Name : " + name);
+        System.out.println("Roll Number  : " + roll);
+        System.out.println("Department   : " + department);
+    }
+}
+
+class Staff {
+    String staffName;
+    String designation;
+
+    Staff(String staffName, String designation) {
+        this.staffName = staffName;
+        this.designation = designation;
+    }
+
+    void displayStaff() {
+        System.out.println("Staff Name   : " + staffName);
+        System.out.println("Designation  : " + designation);
+    }
+}
+
+public class UniversitySystem {
+
+    public static void main(String[] args) {
+
+        Student s1 = new Student("Diya", 101, "Computer Science");
+        Staff st1 = new Staff("Kowsalya", "Professor");
+
+        System.out.println("Student Details");
+        s1.displayStudent();
+
+        System.out.println();
+
+        System.out.println("Staff Details");
+        st1.displayStaff();
+    }
+}
