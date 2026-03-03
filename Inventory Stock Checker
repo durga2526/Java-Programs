@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class InventoryChecker {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter number of items: ");
+        int n = sc.nextInt();
+
+        int stock[] = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            System.out.print("Stock for item " + (i+1) + ": ");
+            stock[i] = sc.nextInt();
+        }
+
+        System.out.print("Enter reorder level: ");
+        int R = sc.nextInt();
+
+        int count = 0;
+        for (int i = 0; i < n; i++) {
+            if (stock[i] < R)
+                count++;
+        }
+
+        System.out.println("Items below reorder level: " + count);
+    }
+}
