@@ -1,0 +1,30 @@
+class InvalidAgeException extends Exception {
+    public InvalidAgeException(String message) {
+        super(message);
+    }
+}
+
+public class AgeVerification {
+
+    static void checkAge(int age) throws InvalidAgeException {
+        if (age < 18) {
+            throw new InvalidAgeException("Access Denied! You must be 18+.");
+        } else {
+            System.out.println("Access Granted. You are eligible.");
+        }
+    }
+
+    public static void main(String[] args) {
+
+        int age = 16;
+
+        System.out.println("---- Age Verification System ----");
+        System.out.println("Entered Age: " + age);
+
+        try {
+            checkAge(age);
+        } catch (InvalidAgeException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
