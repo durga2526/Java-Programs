@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+class Shape {
+    double area() {
+        return 0;
+    }
+}
+
+class Rectangle extends Shape {
+    double length, breadth;
+
+    Rectangle(double l, double b) {
+        length = l;
+        breadth = b;
+    }
+
+    double area() {
+        return length * breadth;
+    }
+}
+
+class Circle extends Shape {
+    double radius;
+
+    Circle(double r) {
+        radius = r;
+    }
+
+    double area() {
+        return 3.14 * radius * radius;
+    }
+}
+
+public class ShapeMain {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter shape (rectangle/circle): ");
+        String choice = sc.nextLine();
+
+        Shape s;
+
+        if (choice.equalsIgnoreCase("rectangle")) {
+            System.out.print("Enter length: ");
+            double l = sc.nextDouble();
+            System.out.print("Enter breadth: ");
+            double b = sc.nextDouble();
+            s = new Rectangle(l, b);
+        } else {
+            System.out.print("Enter radius: ");
+            double r = sc.nextDouble();
+            s = new Circle(r);
+        }
+
+        System.out.println("Area: " + s.area());
+    }
+}
