@@ -1,0 +1,41 @@
+public class StringExample {
+
+    public static String withNo(String str) {
+        return "No:" + str;
+    }
+
+    public static boolean twoE_charAt(String str) {
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == 'e')
+                count++;
+        }
+        if (count == 2)
+            return true;
+        return false;
+    }
+
+    public static boolean twoE_substring(String str) {
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
+            String sub = str.substring(i, i + 1);
+            if (sub.equals("e"))
+                count++;
+        }
+        if (count == 2)
+            return true;
+        return false;
+    }
+
+    public static void main(String[] args) {
+
+        String str1 = "Welcome To";
+        String str2 = "Java Programming";
+        String str3 = str1 + " " + str2 + "!";
+
+        System.out.println(withNo(str1));
+        System.out.println("Combined String:" + str3);
+        System.out.println("Is there two 'e'?:" + twoE_charAt(str1));
+        System.out.println("Is there two 'e'?:" + twoE_substring(str2));
+    }
+}
