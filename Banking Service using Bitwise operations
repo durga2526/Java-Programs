@@ -1,0 +1,25 @@
+import java.util.Scanner;
+class BankingService {
+    static final int Savings = 1;
+    static final int Current = 2;
+    static final int Credit = 4;
+    static final int Loan = 8;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int services = 0;
+        System.out.println("Select Services to add:");
+        System.out.println("1.Savings, 2.Current, 3.Credit, 4.Loan");
+        int choice = sc.nextInt();
+        if (choice == 1) services |= Savings;
+        else if (choice == 2) services |= Current;
+        else if (choice == 3) services |= Credit;
+        else if (choice == 4) services |= Loan;
+        System.out.println("Service Code: " + services);
+        System.out.println("Active Services:");
+        System.out.println("Savings : " + ((services & Savings) != 0));
+        System.out.println("Current : " + ((services & Current) != 0));
+        System.out.println("Credit  : " + ((services & Credit) != 0));
+        System.out.println("Loan    : " + ((services & Loan) != 0));
+        sc.close();
+    }
+}
